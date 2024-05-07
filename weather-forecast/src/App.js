@@ -125,10 +125,10 @@ const GoogleMapsAutocomplete = () => {
   }, [position]);
   const getWeatherdata = async () => {
     const houlyweather = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${position.lat}&lon=${position.lng}&appid=${process.env.REACT_APP_OPENWEATHER_APP_ID}&units=metric`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${position.lat}&lon=${position.lng}&appid=${process.env.REACT_APP_OPENWEATHER_APP_ID}&units=imperial`
     );
     const dailyforcast = await axios.get(
-      `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${position.lat}&lon=${position.lng}&cnt=7&appid=${process.env.REACT_APP_OPENWEATHER_APP_ID}&units=metric`
+      `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${position.lat}&lon=${position.lng}&cnt=7&appid=${process.env.REACT_APP_OPENWEATHER_APP_ID}&units=imperial`
     );
     setHoulyweather(separateByDate(houlyweather.data));
     setDailyweather(dailyforcast.data.list);
