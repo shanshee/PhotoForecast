@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* display: flex; */
+  justify-content: center;
+  background-color: #ededed;
+}
+.grid_cols_2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid_cols_3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid_cols_4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (min-width: 350px) {
+  .xsm\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .xsm\:gap-4 {
+    gap: 1rem;
+  }
+  .xsm\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+  .xsm\:grid {
+    display: grid;
+  }
+
+  .xsm\:my-1 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+}
