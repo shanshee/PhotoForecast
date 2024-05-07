@@ -273,9 +273,9 @@ const GoogleMapsAutocomplete = () => {
   }, [dailyweather]);
   return (
     <>
-      <div className="md:grid lg:grid-cols-5 gap-4 p-3 h-screen sm:grid xsm:grid">
-        <div className="col-span-3 h-full justify-center">
-          <div className=" h-20">
+      <div className="md:grid lg:grid-cols-5 gap-4 p-3 min-h-screen sm:grid xsm:grid">
+        <div className="col-span-3 h-full justify-center flex flex-col pb-3">
+          <div className="h-20 mb-10">
             <img src={Logo} className=" h-full"></img>
           </div>
           <div className="relative left-2/4 -translate-x-2/4 w-64">
@@ -289,8 +289,7 @@ const GoogleMapsAutocomplete = () => {
           </div>
           <div
             id="map"
-            className=" ml-6 mt-3 mr-6 xsm:my-1"
-            style={{ height: "440px" }}
+            className="ml-6 mt-3 mr-6 xsm:my-1"
           ></div>
 
           <div className="mt-[15px] ml-6 mr-6 xsm:my-1">
@@ -310,16 +309,17 @@ const GoogleMapsAutocomplete = () => {
                       src={`https://openweathermap.org/img/wn/${eachDay.weather[0].icon}@2x.png`}
                     ></img>
                   </div>
-                  <div className="font-bold text-xl pointer-events-none">
-                    {eachDay.temp.day}
-                    {"\u00b0"}
-                  </div>
-                  <div className="pointer-events-none text-sm text-zinc-400">
-                    {eachDay.weather[0].description}
-                  </div>
-
-                  <div className="col-start-1 col-span-7 font-bold pointer-events-none">
-                    {convertDateToDay(eachDay.dt, false)}
+                  <div className="flex-1 flex flex-col justify-between">
+                    <div className="font-bold text-xl pointer-events-none">
+                      {eachDay.temp.day}
+                      {"\u00b0"}
+                    </div>
+                    <div className="pointer-events-none text-sm text-zinc-400">
+                      {eachDay.weather[0].description}
+                    </div>
+                    <div className="col-start-1 col-span-7 font-bold pointer-events-none">
+                      {convertDateToDay(eachDay.dt, false)}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -346,7 +346,7 @@ const GoogleMapsAutocomplete = () => {
                       className="h-20"
                       src={`http://openweathermap.org/img/wn/${
                         showDetail()?.weatherIcon
-                      }.png`}
+                      }@2x.png`}
                     />
                   </div>
                   <div className=" pl-4 font-bold font-mono text-3xl">
@@ -360,7 +360,7 @@ const GoogleMapsAutocomplete = () => {
                 {findBestTimesForPhotographer()?.length > 0 ? (
                   <div className=" ">
                     <div className="grid grid-cols-4  text-gray-400">
-                      <div className=" font-bold text-xl mt-2 col-start-1 col-end-5 text-black">
+                      <div className=" font-bold text-xl mt-2 col-start-1 col-end-5 text-black mb-2">
                         Best Time for Photo Shooting
                       </div>
                       <div className=" font-bold">Time</div>
