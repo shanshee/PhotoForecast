@@ -230,7 +230,7 @@ const GoogleMapsAutocomplete = () => {
           date: moment(selectedDate).format("MMM D"),
           day: convertDateToDay(eachDay.dt, true),
           weatherIcon: eachDay.weather[0].icon,
-          temp: eachDay.temp.day,
+          temp: Math.round(eachDay.temp.day),
           weatherdescription: eachDay.weather[0].description,
           pressure: eachDay.pressure,
           windspeed: eachDay.speed,
@@ -311,8 +311,8 @@ const GoogleMapsAutocomplete = () => {
                   </div>
                   <div className="flex-1 flex flex-col justify-between">
                     <div className="font-bold text-xl pointer-events-none">
-                      {eachDay.temp.day}
-                      {"\u00b0"}
+                      {Math.round(eachDay.temp.day)}
+                      {"\u2109"}
                     </div>
                     <div className="pointer-events-none text-sm text-zinc-400">
                       {eachDay.weather[0].description}
@@ -349,9 +349,9 @@ const GoogleMapsAutocomplete = () => {
                       }@2x.png`}
                     />
                   </div>
-                  <div className=" pl-4 font-bold font-mono text-3xl">
-                    {showDetail()?.temp}
-                    {"\u00b0"}
+                  <div className=" pl-4 font-bold text-3xl">
+                    {Math.round(showDetail()?.temp)}
+                    {"\u2109"}
                   </div>
                   <div className="text-zinc-400">
                     {showDetail()?.weatherdescription}
