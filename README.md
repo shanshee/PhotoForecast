@@ -95,13 +95,10 @@ We welcome contributions to improve PhotoForecast! If you have any suggestions, 
 
 5. Open a pull request on GitHub.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
-For any questions or inquiries, please contact us at slondelle@yahoo.com.
+For any questions or inquiries, please contact me at slondelle@yahoo.com.
 
 ---
 
