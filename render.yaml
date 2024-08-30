@@ -1,0 +1,46 @@
+# Exported from Render on 2024-08-30T19:11:16Z
+services:
+- type: web
+  name: PhotoForecast
+  runtime: elixir
+  repo: https://github.com/shanshee/PhotoForecast
+  plan: starter
+  envVars:
+  - key: REACT_APP_GOOGLE_MAP_API_KEY
+    sync: false
+  - key: REACT_APP_OPENWEATHER_APP_ID
+    sync: false
+  - key: REACT_APP_MAP_ID
+    sync: false
+  - key: REACT_APP_TEST
+    sync: false
+  region: oregon
+  buildCommand: cd weather-forecast && npm install && npm run build
+  startCommand: cd weather-forecast && npm start
+- type: web
+  name: travlr-booking-app
+  runtime: node
+  repo: https://github.com/shanshee/travlr-booking-app
+  plan: starter
+  envVars:
+  - key: VITE_STRIPE_PUB_KEY
+    sync: false
+  - key: STRIPE_API_KEY
+    sync: false
+  - key: NODE_VERSION
+    sync: false
+  - key: MONGODB_CONNECTION_STRING
+    sync: false
+  - key: JWT_SECRET_KEY
+    sync: false
+  - key: CLOUDINARY_CLOUD_NAME
+    sync: false
+  - key: CLOUDINARY_API_SECRET
+    sync: false
+  - key: CLOUDINARY_API_KEY
+    sync: false
+  region: oregon
+  buildCommand: cd frontend && npm install && npm run build  && cd ../backend && npm
+    run build
+  startCommand: cd backend && npm start
+version: "1"
